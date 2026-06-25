@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'ZAIN | AI Automation Engineer Portfolio',
   description: 'Elite AI Automation Engineer specialized in creating intelligent ecosystems that scale.',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/images/icon.png',
   },
 }
 
