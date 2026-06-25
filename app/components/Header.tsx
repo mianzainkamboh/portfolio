@@ -95,13 +95,15 @@ export default function Header() {
             />
             <span className="text-label-mono text-[8px] sm:text-[10px] tracking-widest text-on-surface">SYSTEM_CORE_ACTIVE</span>
           </div>
-          <motion.button
+          <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            href="/Zain-Ul-Abideen.pdf"
+            download
             className="px-4 sm:px-6 py-2 border border-electric-cyan/30 text-electric-cyan font-label-mono text-xs sm:text-xs rounded hover:bg-electric-cyan/10 transition-all"
           >
             RESUME
-          </motion.button>
+          </motion.a>
 
           {/* Mobile Menu Toggle */}
           <button
