@@ -90,7 +90,8 @@ const projects = [
 export default function Projects() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.2,
+    threshold: 0,
+    margin: '0px 0px -20% 0px',
   })
 
   const containerVariants = {
@@ -109,7 +110,7 @@ export default function Projects() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
     },
   }
 
@@ -120,19 +121,19 @@ export default function Projects() {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className="max-w-container-max mx-auto px-margin-desktop py-48"
+      className="max-w-container-max mx-auto px-4 sm:px-6 lg:px-margin-desktop py-16 sm:py-24 lg:py-32"
     >
       {/* Section Header */}
-      <motion.div variants={itemVariants} className="flex items-center gap-8 mb-16">
-        <span className="text-electric-cyan font-label-mono text-sm tracking-widest">[04]</span>
-        <h2 className="font-headline-lg text-headline-lg text-white uppercase tracking-tighter">
+      <motion.div variants={itemVariants} className="flex items-center gap-3 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16">
+        <span className="text-electric-cyan font-label-mono text-xs sm:text-sm tracking-widest">[04]</span>
+        <h2 className="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-white uppercase tracking-tighter">
           PROJECT_ARCHIVE
         </h2>
         <div className="h-[1px] flex-grow bg-gradient-to-r from-white/10 to-transparent"></div>
       </motion.div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
         {projects.map((project, idx) => (
           <motion.div
             key={idx}
@@ -141,7 +142,7 @@ export default function Projects() {
             className="glass-card rounded-2xl overflow-hidden flex flex-col group h-full"
           >
             {/* Image Container */}
-            <div className="relative h-64 overflow-hidden">
+            <div className="relative h-44 sm:h-56 lg:h-64 overflow-hidden">
               <motion.div
                 initial={{ opacity: 0 }}
                 whileHover={{ opacity: 1 }}
@@ -162,7 +163,7 @@ export default function Projects() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileHover={{ opacity: 1, y: 0 }}
-                className="absolute top-6 left-6 z-20"
+                className="absolute top-4 left-4 sm:top-6 sm:left-6 z-20"
               >
                 <span className="px-3 py-1 bg-black/40 backdrop-blur-md border border-white/10 rounded font-label-mono text-[10px] text-white">
                   {project.badge}
@@ -171,12 +172,12 @@ export default function Projects() {
             </div>
 
             {/* Content */}
-            <div className="p-10 flex flex-col flex-grow">
-              <h4 className="font-headline-md text-2xl text-white mb-4">{project.title}</h4>
-              <p className="text-body-md text-on-surface-variant mb-8 flex-grow">{project.description}</p>
+            <div className="p-6 sm:p-8 lg:p-10 flex flex-col flex-grow">
+              <h4 className="font-headline-md text-xl sm:text-2xl text-white mb-3 sm:mb-4">{project.title}</h4>
+              <p className="text-body-md text-sm sm:text-base text-on-surface-variant mb-6 sm:mb-8 flex-grow">{project.description}</p>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-3 mb-10">
+              <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-10">
                 {project.tags.map((tag) => (
                   <motion.span
                     key={tag}

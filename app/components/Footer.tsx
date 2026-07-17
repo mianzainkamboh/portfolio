@@ -20,7 +20,7 @@ export default function Footer() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
     },
   }
 
@@ -126,34 +126,34 @@ export default function Footer() {
       whileInView="visible"
       variants={containerVariants}
       id="contact"
-      className="relative border-t border-white/5 bg-gradient-to-b from-transparent to-deep-obsidian/50 py-24 overflow-hidden"
+      className="relative border-t border-white/5 bg-gradient-to-b from-transparent to-deep-obsidian/50 py-16 sm:py-20 lg:py-24 overflow-hidden"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 w-full" style={{ height: '400px' }} id="footer-canvas-container">
         <canvas id="footer-canvas" className="w-full h-full block" />
       </div>
 
-      <div className="relative z-10 max-w-container-max mx-auto px-margin-desktop">
-        <motion.div variants={itemVariants} className="flex items-center gap-8 mb-16">
-          <span className="text-electric-cyan font-label-mono text-sm tracking-widest">[05]</span>
-          <h2 className="font-headline-lg text-headline-lg text-white uppercase tracking-tighter">
+      <div className="relative z-10 max-w-container-max mx-auto px-4 sm:px-6 lg:px-margin-desktop">
+        <motion.div variants={itemVariants} className="flex items-center gap-3 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16">
+          <span className="text-electric-cyan font-label-mono text-xs sm:text-sm tracking-widest">[05]</span>
+          <h2 className="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-white uppercase tracking-tighter">
             GET_IN_TOUCH
           </h2>
           <div className="h-[1px] flex-grow bg-gradient-to-r from-white/10 to-transparent"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 mb-12 sm:mb-16 lg:mb-24">
           {/* Contact Info */}
-          <motion.div variants={itemVariants} className="space-y-8">
+          <motion.div variants={itemVariants} className="space-y-6 sm:space-y-8">
             <div>
-              <h3 className="font-headline-md text-2xl text-white mb-4">Let&apos;s Collaborate</h3>
-              <p className="text-body-lg text-on-surface-variant leading-relaxed mb-4">
+              <h3 className="font-headline-md text-xl sm:text-2xl text-white mb-4">Let&apos;s Collaborate</h3>
+              <p className="text-body-lg text-sm sm:text-base text-on-surface-variant leading-relaxed mb-4">
                 Ready to architect the future? I&apos;m available for elite AI automation projects, strategic consulting, and innovative system design.
               </p>
-              <p className="text-body-lg text-on-surface-variant leading-relaxed mb-4">
+              <p className="text-body-lg text-sm sm:text-base text-on-surface-variant leading-relaxed mb-4">
                 Whether you need intelligent workflow automation, AI-powered solutions, or cutting-edge system implementation, I bring expertise and innovation to every challenge.
               </p>
-              <p className="text-body-lg text-on-surface-variant leading-relaxed">
+              <p className="text-body-lg text-sm sm:text-base text-on-surface-variant leading-relaxed">
                 Let&apos;s transform your vision into reality with scalable, autonomous intelligence solutions.
               </p>
             </div>
@@ -166,7 +166,7 @@ export default function Footer() {
                 <span className="material-symbols-outlined text-electric-cyan">mail</span>
                 <a
                   href="mailto:zain.kamboh003@gmail.com"
-                  className="text-on-surface-variant hover:text-electric-cyan transition-colors"
+                  className="text-on-surface-variant hover:text-electric-cyan transition-colors break-all text-sm sm:text-base"
                 >
                   zain.kamboh003@gmail.com
                 </a>
@@ -264,7 +264,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <motion.div
           variants={itemVariants}
-          className="flex items-center justify-between pt-8 border-t border-white/5"
+          className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/5"
         >
           <p className="text-label-mono text-xs text-on-surface-variant">
             © 2026 Zain Ul Abideen. All rights reserved.

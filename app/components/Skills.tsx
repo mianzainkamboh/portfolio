@@ -53,7 +53,8 @@ const skillsData = [
 export default function Skills() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.2,
+    threshold: 0,
+    margin: '0px 0px -20% 0px',
   })
 
   const containerVariants = {
@@ -72,7 +73,7 @@ export default function Skills() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
     },
   }
 
@@ -83,12 +84,12 @@ export default function Skills() {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className="max-w-container-max mx-auto px-margin-desktop py-48"
+      className="max-w-container-max mx-auto px-4 sm:px-6 lg:px-margin-desktop py-16 sm:py-24 lg:py-32"
     >
       {/* Section Header */}
-      <motion.div variants={itemVariants} className="flex items-center gap-8 mb-16">
-        <span className="text-electric-cyan font-label-mono text-sm tracking-widest">[02]</span>
-        <h2 className="font-headline-lg text-headline-lg text-white uppercase tracking-tighter">
+      <motion.div variants={itemVariants} className="flex items-center gap-3 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16">
+        <span className="text-electric-cyan font-label-mono text-xs sm:text-sm tracking-widest">[02]</span>
+        <h2 className="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-white uppercase tracking-tighter">
           TECH_SPECIFICATIONS
         </h2>
         <div className="h-[1px] flex-grow bg-gradient-to-r from-white/10 to-transparent"></div>
@@ -101,35 +102,35 @@ export default function Skills() {
         className="glass-card rounded-2xl overflow-hidden border border-white/10"
       >
         {/* Terminal Header */}
-        <div className="terminal-header px-8 py-5 flex items-center justify-between">
-          <div className="flex gap-3">
+        <div className="terminal-header px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 flex items-center justify-between gap-3">
+          <div className="flex gap-2 sm:gap-3">
             <motion.div
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-3.5 h-3.5 rounded-full bg-error-red/40 border border-error-red/20"
+              className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-error-red/40 border border-error-red/20"
             />
             <motion.div
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2.2, repeat: Infinity }}
-              className="w-3.5 h-3.5 rounded-full bg-amber-500/40 border border-amber-500/20"
+              className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-amber-500/40 border border-amber-500/20"
             />
             <motion.div
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2.4, repeat: Infinity }}
-              className="w-3.5 h-3.5 rounded-full bg-electric-cyan/40 border border-electric-cyan/20"
+              className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-electric-cyan/40 border border-electric-cyan/20"
             />
           </div>
-          <div className="flex items-center gap-4">
+          <div className="hidden sm:flex items-center gap-4">
             <span className="text-label-mono text-[10px] text-on-surface-variant flex items-center gap-2">
               <span className="material-symbols-outlined text-sm">terminal</span>
               zain@nexus:~/kernel/spec
             </span>
           </div>
-          <div className="text-label-mono text-[10px] text-electric-cyan">SYSTEM_READY</div>
+          <div className="text-label-mono text-[9px] sm:text-[10px] text-electric-cyan">SYSTEM_READY</div>
         </div>
 
         {/* Skills Grid */}
-        <div className="p-16 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16">
+        <div className="p-6 sm:p-10 lg:p-16 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 sm:gap-12 lg:gap-16">
           {skillsData.map((category, idx) => (
             <motion.div
               key={category.title}

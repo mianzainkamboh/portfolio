@@ -211,11 +211,11 @@ export default function Hero() {
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 24 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
+      transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
     },
   }
 
@@ -277,7 +277,8 @@ export default function Hero() {
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 sm:px-10 py-3 sm:py-5 bg-electric-cyan text-deep-obsidian font-bold rounded-lg transition-all flex items-center gap-2 sm:gap-3 text-sm sm:text-base"
+            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+            className="px-6 sm:px-10 py-3 sm:py-5 bg-electric-cyan text-deep-obsidian font-bold rounded-lg transition-colors flex items-center gap-2 sm:gap-3 text-sm sm:text-base"
           >
             ACCESS ARCHIVE
             <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -289,7 +290,8 @@ export default function Hero() {
             }}
             whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 sm:px-10 py-3 sm:py-5 border border-white/10 text-white font-bold rounded-lg transition-all flex items-center gap-2 sm:gap-3 text-sm sm:text-base"
+            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+            className="px-6 sm:px-10 py-3 sm:py-5 border border-white/10 text-white font-bold rounded-lg transition-colors flex items-center gap-2 sm:gap-3 text-sm sm:text-base"
           >
             INITIALIZE CONTACT
           </motion.button>
