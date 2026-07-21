@@ -134,7 +134,7 @@ export default function Projects() {
         },
       })
 
-      cards.forEach((card, i) => {
+      cards.forEach((card) => {
         tl.to(card, { xPercent: 0, opacity: 1, duration: 1, ease: 'power2.out' })
         tl.to(card, { xPercent: -120, opacity: 0, duration: 1, ease: 'power2.in' }, '+=0.4')
       })
