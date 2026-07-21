@@ -222,7 +222,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 sm:pt-24"
     >
       {/* Background Canvas */}
       <div className="absolute inset-0 w-full h-full opacity-60" id="hero-canvas-container">

@@ -59,13 +59,15 @@ export default function Header() {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className={`fixed top-0 w-full z-[100] border-b transition-all duration-300 h-20 ${
-        isScrolled
-          ? 'border-white/10 bg-surface-glass/80 backdrop-blur-xl'
-          : 'border-white/5 bg-surface-glass/60 backdrop-blur-md'
-      }`}
+      className="fixed top-3 sm:top-5 left-0 right-0 mx-auto z-[100] w-[94%] max-w-6xl"
     >
-      <div className="flex justify-between items-center max-w-container-max mx-auto px-4 sm:px-6 lg:px-margin-desktop h-full">
+      <div
+        className={`flex justify-between items-center gap-4 px-4 sm:px-6 lg:px-8 h-16 sm:h-[4.5rem] rounded-full border transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.45)] ${
+          isScrolled
+            ? 'border-white/15 bg-surface-glass/80 backdrop-blur-xl'
+            : 'border-white/10 bg-surface-glass/60 backdrop-blur-lg'
+        }`}
+      >
         <motion.div variants={itemVariants} className="font-headline-lg text-lg sm:text-xl font-bold tracking-tighter text-electric-cyan glow-cyan">
           ZAIN.
         </motion.div>
@@ -100,7 +102,7 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
             href="/Zain-Ul-Abideen.pdf"
             download
-            className="px-4 sm:px-6 py-2 border border-electric-cyan/30 text-electric-cyan font-label-mono text-xs sm:text-xs rounded hover:bg-electric-cyan/10 transition-all"
+            className="px-4 sm:px-6 py-2 border border-electric-cyan/30 text-electric-cyan font-label-mono text-xs sm:text-xs rounded-full hover:bg-electric-cyan/10 transition-all"
           >
             RESUME
           </motion.a>
@@ -132,7 +134,7 @@ export default function Header() {
           variants={mobileMenuVariants}
           initial="hidden"
           animate="visible"
-          className="lg:hidden absolute top-20 left-0 right-0 bg-surface-glass/95 backdrop-blur-xl border-b border-white/10"
+          className="lg:hidden mt-3 rounded-3xl border border-white/10 bg-surface-glass/90 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.45)] overflow-hidden"
         >
           <div className="flex flex-col divide-y divide-white/5">
             {navItems.map((item) => (
@@ -140,7 +142,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 sm:px-6 py-4 text-sm text-on-surface-variant hover:text-electric-cyan transition-colors"
+                className="px-6 py-4 text-sm text-on-surface-variant hover:text-electric-cyan transition-colors"
               >
                 {item.label}
               </motion.a>
